@@ -10,7 +10,7 @@ const theme = {
         // primary: "#3b28cc",
         secondary: "rgba(120, 195, 251, 1)",
     },
-    fonts: ["sans-serif", "Roboto"],
+    fonts: ["sans-serif", "Roboto", 'Comfortaa', "cursive"],
     fontSizes: {
         small: "1em",
         medium: "2em",
