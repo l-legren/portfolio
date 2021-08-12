@@ -1,53 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import styled from "styled-components";
-
 // Local Imports
 import FullSizeContainer from "../Components/FullSizeContainer/FullSizeContainer";
+import { MainContainer, ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
+import { throttle } from "lodash";
 
 // const cardinals = {
 //     1: "first",
 //     2: "second",
+//     3: "third",
 // };
 
-const ButtonWrapper = styled.div`
-    cursor: pointer;
-    width: auto;
-    position: absolute;
-    bottom: 5%;
-`;
-
-const ArrowDown = styled(IoIosArrowDown)`
-    color: white;
-    font-size: 40px;
-    transition: 0.5s ease-in-out all;
-    transform: ${({ comingview }) =>
-        comingview === 3 ? "rotate(180deg)" : "rotate(0)"};
-`;
-
-const ArrowUp = styled(IoIosArrowUp)`
-    color: white;
-    font-size: 40px;
-`;
-
-const HomeScreen = styled.img`
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-`;
+const viewIds = ["#first-view", "#second-view", "#third-view"];
 
 export default function Main() {
     const [actualView, setActualView] = useState(1);
+    const [scrollTop, setScrollTop] = useState(0);
 
     useEffect(() => {
-        // console.log(process.env);
-    }, []);
+        const offsets = viewIds.reduce((acc, val) => {
+            const cardinal = val.substr(1).split("-")[0];
+
+            acc[cardinal] = document
+                .querySelector(`#${cardinal}-view`)
+                .getBoundingClientRect();
+
+            return acc;
+        }, {});
+
+        const onScroll = (e) => {
+            setScrollTop(e.target.documentElement.scrollTop)
+            console.log("OFFSET", offsets.first) // Problem here with number
+            console.log("scrollTop", scrollTop) // Problem here with number
+            // if (scrollTop > offsets.first) {
+            //     setActualView(2);
+            //     console.log("In View 2", actualView);
+            // }
+        };
+        window.addEventListener("scroll", throttle(onScroll, 100));
+
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [scrollTop]);
 
     const handleArrowClick = (e) => {
-        // setActualView(actualView + 1);
-
-        console.log(actualView, e.target.parentNode.nextSibling);
-
         const nextView = {
             elem: e.target.parentNode.nextSibling,
             number: actualView + 1,
@@ -90,7 +84,7 @@ export default function Main() {
     ];
 
     return (
-        <>
+        <MainContainer>
             {views.map((view) => (
                 <FullSizeContainer key={view.id}>
                     <HomeScreen id={view.id} src={view.imageUrl} />
@@ -99,6 +93,6 @@ export default function Main() {
                     </ButtonWrapper>
                 </FullSizeContainer>
             ))}
-        </>
+        </MainContainer>
     );
 }
