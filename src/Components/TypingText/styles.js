@@ -21,7 +21,7 @@ export const TypingTextContent = styled.div`
 `;
 
 export const TypingTextTyping = styled.h1`
-    min-height: 600px;
+    min-height: 400px;
     font-size: 100px;
     font-weight: 300;
     white-space: wrap;
@@ -29,10 +29,11 @@ export const TypingTextTyping = styled.h1`
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: ${({ theme }) => theme.colors.light1};
-    padding: 20px;
+    padding: 80px;
     border-radius: 5px;
     border: 1px solid white;
-    background-color: transparent;
+    opacity: 0.5;
+    background-color: black;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 80px;

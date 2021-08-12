@@ -11,10 +11,12 @@ export default function TypingText() {
     useEffect(() => {
         const textData = [
             "Carlos Leret",
-            "Frontend Development",
-            "Javascript, React, Node",
-            "styled, storybook",
-            "Git, Bash",
+            "Web and Frontend Development",
+            "Javascript, TypeScript",
+            "React, Redux, Node, Jest",
+            "Styled Components, Storybook",
+            "Git, CLI, Bash",
+            "Your friendly Dev"
         ];
 
         const typeWriter = (text, i, callback) => {
