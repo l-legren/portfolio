@@ -21,8 +21,8 @@ const ArrowDown = styled(IoIosArrowDown)`
     color: white;
     font-size: 40px;
     transition: 0.5s ease-in-out all;
-    transform: ${({ comingView }) =>
-        comingView === 3 ? "rotate(180deg)" : "rotate(0)"};
+    transform: ${({ comingview }) =>
+        comingview === 3 ? "rotate(180deg)" : "rotate(0)"};
 `;
 
 const ArrowUp = styled(IoIosArrowUp)`
@@ -62,11 +62,15 @@ export default function Main() {
             }
         }
 
-        if (nextView) {
+        if (nextView.number <= 3) {
             scroll(nextView.elem);
             setActualView(nextView.number);
         } else {
-            window.scrollTo(0,0)
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+            setActualView(1);
         }
     };
 
@@ -91,7 +95,7 @@ export default function Main() {
                 <FullSizeContainer key={view.id}>
                     <HomeScreen id={view.id} src={view.imageUrl} />
                     <ButtonWrapper onClick={(e) => handleArrowClick(e)}>
-                        <ArrowDown comingView={actualView} />
+                        <ArrowDown comingview={actualView} />
                     </ButtonWrapper>
                 </FullSizeContainer>
             ))}
