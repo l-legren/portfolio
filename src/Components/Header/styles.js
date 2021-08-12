@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
     display: flex;
     height: 55px;
     border-bottom: 1px white solid;
+    z-index: 1;
 `;
 
 export const HeaderName = styled.h2`

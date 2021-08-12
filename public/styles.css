@@ -6,3 +6,7 @@ body {
     width: 100vw;
     font-family: 'Comfortaa', "cursive";
 }
+
+svg {
+    pointer-events: none;
+}
