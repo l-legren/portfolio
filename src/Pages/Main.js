@@ -1,47 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // Local Imports
 import FullSizeContainer from "../Components/FullSizeContainer/FullSizeContainer";
-import { MainContainer, ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
-import { throttle } from "lodash";
+import { ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
 
-// const cardinals = {
-//     1: "first",
-//     2: "second",
-//     3: "third",
-// };
+import ReactPageScroller from "react-page-scroller";
 
-const viewIds = ["#first-view", "#second-view", "#third-view"];
+// const viewIds = ["#first-view", "#second-view", "#third-view"];
 
 export default function Main() {
-    const [actualView, setActualView] = useState(1);
-    const [scrollTop, setScrollTop] = useState(0);
+    const [actualView, setActualView] = useState(0);
 
-    useEffect(() => {
-        const offsets = viewIds.reduce((acc, val) => {
-            const cardinal = val.substr(1).split("-")[0];
-
-            acc[cardinal] = document
-                .querySelector(`#${cardinal}-view`)
-                .getBoundingClientRect();
-
-            return acc;
-        }, {});
-
-        const onScroll = (e) => {
-            setScrollTop(e.target.documentElement.scrollTop)
-            console.log("OFFSET", offsets.first) // Problem here with number
-            console.log("scrollTop", scrollTop) // Problem here with number
-            // if (scrollTop > offsets.first) {
-            //     setActualView(2);
-            //     console.log("In View 2", actualView);
-            // }
-        };
-        window.addEventListener("scroll", throttle(onScroll, 100));
-
-        return () => window.removeEventListener("scroll", onScroll);
-    }, [scrollTop]);
+    const handleScrollPage = (number) => {
+        console.log("handling scroll page", number);
+        setActualView(number);
+    };
 
     const handleArrowClick = (e) => {
+
+        console.log("clicking")
+
         const nextView = {
             elem: e.target.parentNode.nextSibling,
             number: actualView + 1,
@@ -64,7 +41,7 @@ export default function Main() {
                 top: 0,
                 behavior: "smooth",
             });
-            setActualView(1);
+            setActualView(0);
         }
     };
 
@@ -84,7 +61,7 @@ export default function Main() {
     ];
 
     return (
-        <MainContainer>
+        <ReactPageScroller pageOnChange={handleScrollPage}>
             {views.map((view) => (
                 <FullSizeContainer key={view.id}>
                     <HomeScreen id={view.id} src={view.imageUrl} />
@@ -93,6 +70,6 @@ export default function Main() {
                     </ButtonWrapper>
                 </FullSizeContainer>
             ))}
-        </MainContainer>
+        </ReactPageScroller>
     );
 }
