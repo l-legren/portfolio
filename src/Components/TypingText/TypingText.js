@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import {
+    TypingTextContent,
+    TypingTextWrapper,
+    TypingTextTyping,
+} from "./styles";
 
 export default function TypingText() {
     const [displayedText, setDisplayedText] = useState("");

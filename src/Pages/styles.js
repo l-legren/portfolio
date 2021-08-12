@@ -16,8 +16,8 @@ export const ArrowDown = styled(IoIosArrowDown)`
         comingview === 2 ? "rotate(180deg)" : "rotate(0)"};
 `;
 
-export const HomeScreen = styled.img`
-    object-fit: cover;
+export const HomeScreen = styled.div`
+    /* object-fit: cover; */
     width: 100%;
     height: 100%;
 `;

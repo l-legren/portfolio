@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import ReactPageScroller from "react-page-scroller";
+
 // Local Imports
 import FullSizeContainer from "../Components/FullSizeContainer/FullSizeContainer";
 import { ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
-
-import ReactPageScroller from "react-page-scroller";
-
+import TypingText from "../Components/TypingText/TypingText";
+import { urlencoded } from "body-parser";
 // const viewIds = ["#first-view", "#second-view", "#third-view"];
 
 export default function Main() {
@@ -16,8 +17,7 @@ export default function Main() {
     };
 
     const handleArrowClick = (e) => {
-
-        console.log("clicking")
+        console.log("clicking");
 
         const nextView = {
             elem: e.target.parentNode.nextSibling,
@@ -64,7 +64,15 @@ export default function Main() {
         <ReactPageScroller pageOnChange={handleScrollPage}>
             {views.map((view) => (
                 <FullSizeContainer key={view.id}>
-                    <HomeScreen id={view.id} src={view.imageUrl} />
+                    <HomeScreen
+                        id={view.id}
+                        style={{
+                            backgroundImage: `url(${view.imageUrl})`,
+                            backgroundSize: "cover",
+                        }}
+                    >
+                        {view.id === "first-view" ? <TypingText /> : null}
+                    </HomeScreen>
                     <ButtonWrapper onClick={(e) => handleArrowClick(e)}>
                         <ArrowDown comingview={actualView} />
                     </ButtonWrapper>
