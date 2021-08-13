@@ -62,3 +62,32 @@ return () => {
 
     //     return () => window.removeEventListener("scroll", onScroll);
     // }, [scrollTop]);
+
+
+        const handleArrowClick = (e) => {
+            const nextView = {
+                elem: e.target.parentNode.parentNode.nextSibling,
+                number: actualView + 1,
+            };
+            console.log("clicking", e.target.parentNode.parentNode.nextSibling);
+
+            function scroll(view) {
+                if (view) {
+                    view.scrollIntoView({
+                        block: "center",
+                        behavior: "smooth",
+                    });
+                    setActualView(view);
+                }
+            }
+
+            if (nextView.number <= 2) {
+                scroll(nextView.elem);
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+                setActualView(0);
+            }
+        };

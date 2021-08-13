@@ -32,7 +32,7 @@ export const TypingTextTyping = styled.h1`
     padding: 80px;
     border-radius: 5px;
     border: 1px solid white;
-    opacity: 0.5;
+    opacity: 0.4;
     background-color: black;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -45,6 +45,9 @@ export const TypingTextTyping = styled.h1`
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        min-height: 200px;
+        margin: 20px;
+        padding: 20px;
         font-size: 40px;
     }
 `;

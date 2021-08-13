@@ -2,7 +2,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import styled from "styled-components";
 
 export const ButtonWrapper = styled.div`
-    cursor: pointer;
+    cursor: default;
     width: auto;
     position: absolute;
     bottom: 5%;

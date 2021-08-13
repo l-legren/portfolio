@@ -5,8 +5,6 @@ import ReactPageScroller from "react-page-scroller";
 import FullSizeContainer from "../Components/FullSizeContainer/FullSizeContainer";
 import { ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
 import TypingText from "../Components/TypingText/TypingText";
-import { urlencoded } from "body-parser";
-// const viewIds = ["#first-view", "#second-view", "#third-view"];
 
 export default function Main() {
     const [actualView, setActualView] = useState(0);
@@ -14,35 +12,6 @@ export default function Main() {
     const handleScrollPage = (number) => {
         console.log("handling scroll page", number);
         setActualView(number);
-    };
-
-    const handleArrowClick = (e) => {
-        console.log("clicking");
-
-        const nextView = {
-            elem: e.target.parentNode.nextSibling,
-            number: actualView + 1,
-        };
-
-        function scroll(view) {
-            if (view) {
-                view.scrollIntoView({
-                    block: "center",
-                    behavior: "smooth",
-                });
-            }
-        }
-
-        if (nextView.number <= 3) {
-            scroll(nextView.elem);
-            setActualView(nextView.number);
-        } else {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
-            setActualView(0);
-        }
     };
 
     const views = [
@@ -73,7 +42,7 @@ export default function Main() {
                     >
                         {view.id === "first-view" ? <TypingText /> : null}
                     </HomeScreen>
-                    <ButtonWrapper onClick={(e) => handleArrowClick(e)}>
+                    <ButtonWrapper>
                         <ArrowDown comingview={actualView} />
                     </ButtonWrapper>
                 </FullSizeContainer>
