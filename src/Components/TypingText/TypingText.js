@@ -15,7 +15,7 @@ export default function TypingText() {
             "Javascript, TypeScript",
             "React, Redux, Node, Jest",
             "Styled Components, Storybook",
-            "Git, CLI, Bash",
+            "Git, Bash",
         ];
 
         const typeWriter = (text, i, callback) => {
@@ -26,7 +26,7 @@ export default function TypingText() {
                     typeWriter(text, i + 1, callback);
                 }, 200);
             } else if (typeof callback == "function") {
-                setTimeout(callback, 700);
+                setTimeout(callback, 500);
             }
         };
 

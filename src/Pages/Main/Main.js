@@ -5,6 +5,7 @@ import ReactPageScroller from "react-page-scroller";
 import FullSizeContainer from "../../Components/FullSizeContainer/FullSizeContainer";
 import { ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
 import TypingText from "../../Components/TypingText/TypingText";
+import AboutMe from "../../Components/AboutMe/AboutMe";
 
 export default function Main() {
     const [actualView, setActualView] = useState(0);
@@ -40,7 +41,11 @@ export default function Main() {
                             backgroundSize: "cover",
                         }}
                     >
-                        {view.id === "first-view" ? <TypingText /> : null}
+                        {view.id === "first-view" ? (
+                            <TypingText />
+                        ) : view.id === "second-view" ? (
+                            <AboutMe />
+                        ) : null}
                     </HomeScreen>
                     <ButtonWrapper>
                         <ArrowDown comingview={actualView} />
