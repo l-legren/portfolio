@@ -34,6 +34,7 @@ export const TypingTextTyping = styled.h1`
     border: 1px solid white;
     opacity: 0.4;
     background-color: black;
+    cursor: default;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 80px;

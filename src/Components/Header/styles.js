@@ -10,6 +10,14 @@ export const HeaderWrapper = styled.div`
     z-index: 1;
 `;
 
+export const HeaderContent = styled.div`
+    width: ${({ theme }) => theme.breakpoints.xl};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+`
+
 export const HeaderName = styled(Link)`
     font-size: 1.8rem;
     margin-left: 20px;
@@ -20,7 +28,7 @@ export const HeaderName = styled(Link)`
 `;
 
 export const HeaderLink = styled(Link)`
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: white;
 `;

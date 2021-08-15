@@ -17,15 +17,15 @@ export default function Main() {
     const views = [
         {
             id: "first-view",
-            imageUrl: "/images/prog1.jpg",
+            imageUrl: "/images/prog3.jpg",
         },
         {
             id: "second-view",
-            imageUrl: "/images/prog2.jpg",
+            imageUrl: "/images/aboutme.jpg",
         },
         {
             id: "third-view",
-            imageUrl: "/images/prog3.jpg",
+            imageUrl: "/images/berlinskyline.jpg",
         },
     ];
 

@@ -16,7 +16,6 @@ export default function TypingText() {
             "React, Redux, Node, Jest",
             "Styled Components, Storybook",
             "Git, CLI, Bash",
-            "Your friendly Dev"
         ];
 
         const typeWriter = (text, i, callback) => {
