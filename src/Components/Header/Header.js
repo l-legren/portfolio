@@ -1,13 +1,14 @@
 import React from "react";
 // Styles
-import {HeaderName, HeaderWrapper} from "./styles";
+import { HeaderName, HeaderWrapper } from "./styles";
+
+import { HeaderLink } from "./styles";
 
 export default function Header() {
     return (
         <HeaderWrapper>
-            <HeaderName>
-                CARLOS LERET
-            </HeaderName>
+            <HeaderName to='/' >CARLOS LERET</HeaderName>
+            <HeaderLink to="/projects">Projects</HeaderLink>
         </HeaderWrapper>
     );
 }

@@ -26,7 +26,7 @@ window.addEventListener("scroll", () => {
             setTimeout(() => {
                 setActualView(prevView);
             }, 500);
-        }
+            }
         console.log("Going Up", prevDiv);
     }
     lastScrollTop = offset < 0 ? 0 : offset;
@@ -37,31 +37,31 @@ return () => {
 };
 
 
-    // useEffect(() => {
-    //     const offsets = viewIds.reduce((acc, val) => {
-    //         const cardinal = val.substr(1).split("-")[0];
+    useEffect(() => {
+        const offsets = viewIds.reduce((acc, val) => {
+            const cardinal = val.substr(1).split("-")[0];
 
-    //         acc[cardinal] = document
-    //             .querySelector(`#${cardinal}-view`)
-    //             .getBoundingClientRect();
+            acc[cardinal] = document
+                .querySelector(`#${cardinal}-view`)
+                .getBoundingClientRect();
 
-    //         return acc;
-    //     }, {});
+            return acc;
+        }, {});
 
-    //     const onScroll = (e) => {
-    //         // setScrollTop(e.target.documentElement.scrollTop)
-    //         setScrollTop(window.scrollY)
-    //         console.log("OFFSET", offsets.first.bottom) // Problem here with number
-    //         console.log("scrollTop", scrollTop) // Problem here with number
-    //         // if (scrollTop > offsets.first) {
-    //         //     setActualView(2);
-    //         //     console.log("In View 2", actualView);
-    //         // }
-    //     };
-    //     window.addEventListener("scroll", throttle(onScroll, 100));
+        const onScroll = (e) => {
+            // setScrollTop(e.target.documentElement.scrollTop)
+            setScrollTop(window.scrollY)
+            console.log("OFFSET", offsets.first.bottom) // Problem here with number
+            console.log("scrollTop", scrollTop) // Problem here with number
+            if (scrollTop > offsets.first) {
+                setActualView(2);
+                console.log("In View 2", actualView);
+            }
+        };
+        window.addEventListener("scroll", throttle(onScroll, 100));
 
-    //     return () => window.removeEventListener("scroll", onScroll);
-    // }, [scrollTop]);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [scrollTop]);
 
 
         const handleArrowClick = (e) => {

@@ -1,19 +1,19 @@
 import { Switch, Route } from "react-router-dom";
 
 // Components
-import Header from './Components/Header/Header'
+import Header from "./Components/Header/Header";
 
 // Pages
-import Main from "./Pages/Main";
+import Main from "./Pages/Main/Main";
+import Projects from "./Pages/Projects/Projects";
 
 function App() {
-
     return (
         <>
             <Header />
             <Switch>
                 <Route exact path="/" render={() => <Main />} />
-                <Route path="/second-view" />
+                <Route path="/projects" render={() => <Projects />} />
             </Switch>
         </>
     );

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactPageScroller from "react-page-scroller";
 
 // Local Imports
-import FullSizeContainer from "../Components/FullSizeContainer/FullSizeContainer";
+import FullSizeContainer from "../../Components/FullSizeContainer/FullSizeContainer";
 import { ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
-import TypingText from "../Components/TypingText/TypingText";
+import TypingText from "../../Components/TypingText/TypingText";
 
 export default function Main() {
     const [actualView, setActualView] = useState(0);
