@@ -26,7 +26,7 @@ export default function Main() {
         },
         {
             id: "third-view",
-            imageUrl: "/images/berlinskyline.jpg",
+            imageUrl: "/images/view3.jpg",
         },
     ];
 

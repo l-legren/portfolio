@@ -43,12 +43,15 @@ export const TextLeft = styled.h2`
 `;
 
 export const TextRight = styled.h2`
-    font-size: 2rem;
-    padding: 20px 100px 200px 20px;
+    font-size: 1.8rem;
+    padding: 20px 50px 100px 20px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 1.5rem;
+        padding: 20px 10px 100px 60px;
     }
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 1.3rem;
+        padding: 20px 10px 100px 30px;
     }
 `;
