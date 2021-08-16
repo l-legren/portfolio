@@ -31,4 +31,5 @@ export const HeaderLink = styled(Link)`
     font-size: 1.2rem;
     text-decoration: none;
     color: white;
+    margin-right: 20px;
 `;

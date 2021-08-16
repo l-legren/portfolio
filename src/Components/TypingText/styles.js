@@ -36,12 +36,18 @@ export const TypingTextTyping = styled.h1`
     background-color: black;
     cursor: default;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
+        margin: 60px;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
         font-size: 80px;
+        margin: 40px;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         font-size: 60px;
+        margin: 30px;
         min-height: 300px;
     }
 

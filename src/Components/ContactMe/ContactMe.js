@@ -6,7 +6,8 @@ import {
     IconLink,
     InstagramIcon,
     LinkedInIcon,
-    MailIcon
+    MailIcon,
+    GitHubIcon
 } from "../ContactMe/styles";
 import { ContactMeContent } from "./styles";
 
@@ -14,9 +15,7 @@ export default function ContactMe() {
     return (
         <ContactMeWrapper>
             <ContactMeContent>
-                <ContactMeText>
-                    Contact Me
-                </ContactMeText>
+                <ContactMeText>Contact Me</ContactMeText>
                 <ContactMeIcons>
                     <IconLink href="https://www.instagram.com/l.legren/">
                         <InstagramIcon />
@@ -26,6 +25,9 @@ export default function ContactMe() {
                     </IconLink>
                     <IconLink href="mailto:carlosleret@gmail.com">
                         <MailIcon />
+                    </IconLink>
+                    <IconLink href="https://github.com/l-legren">
+                        <GitHubIcon />
                     </IconLink>
                 </ContactMeIcons>
             </ContactMeContent>
