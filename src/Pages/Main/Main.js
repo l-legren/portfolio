@@ -6,6 +6,7 @@ import FullSizeContainer from "../../Components/FullSizeContainer/FullSizeContai
 import { ButtonWrapper, HomeScreen, ArrowDown } from "./styles";
 import TypingText from "../../Components/TypingText/TypingText";
 import AboutMe from "../../Components/AboutMe/AboutMe";
+import ContactMe from "../../Components/ContactMe/ContactMe";
 
 export default function Main() {
     const [actualView, setActualView] = useState(0);
@@ -45,6 +46,8 @@ export default function Main() {
                             <TypingText />
                         ) : view.id === "second-view" ? (
                             <AboutMe />
+                        ) : view.id === "third-view" ? (
+                            <ContactMe />
                         ) : null}
                     </HomeScreen>
                     <ButtonWrapper>
