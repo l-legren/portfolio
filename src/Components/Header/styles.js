@@ -25,6 +25,10 @@ export const HeaderName = styled(Link)`
     align-self: center;
     font-weight: 300;
     text-decoration: none;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 20px;
+    }
 `;
 
 export const HeaderLink = styled(Link)`
@@ -32,4 +36,8 @@ export const HeaderLink = styled(Link)`
     text-decoration: none;
     color: white;
     margin-right: 20px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 15px;
+    }
 `;

@@ -40,6 +40,10 @@ export const TextLeft = styled.h2`
         font-size: 2rem;
         padding: 30px 10px 20px 30px;
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 1.3rem;
+    }
 `;
 
 export const TextRight = styled.h2`
@@ -53,5 +57,10 @@ export const TextRight = styled.h2`
     @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         font-size: 1.3rem;
         padding: 20px 10px 100px 30px;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 1rem;
+        padding: 20px 10px 100px 10px;
     }
 `;

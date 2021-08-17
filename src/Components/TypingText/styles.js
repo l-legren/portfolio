@@ -55,6 +55,6 @@ export const TypingTextTyping = styled.h1`
         min-height: 200px;
         margin: 20px;
         padding: 20px;
-        font-size: 40px;
+        font-size: 30px;
     }
 `;

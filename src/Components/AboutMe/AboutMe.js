@@ -14,9 +14,9 @@ export default function AboutMe() {
             <AboutMeLeft>
                 <TextLeft>
                     Hola, my name is{" "}
-                    <span style={{ color: "orange" }}>Carlos Leret</span>, I
-                    come from <span style={{ color: "orange" }}>Spain</span> but
-                    lived in <span style={{ color: "orange" }}>Berlin</span>
+                    <span style={{ color: "orange" }}>Carlos</span>, I am from{" "}
+                    <span style={{ color: "orange" }}>Spain</span> but lived in{" "}
+                    <span style={{ color: "orange" }}>Berlin</span>
                     for almost a decade. One day, I started programming...
                 </TextLeft>
             </AboutMeLeft>
@@ -26,9 +26,9 @@ export default function AboutMe() {
                     "I am a frontend engineer who enjoys building user
                     interfaces with{" "}
                     <span style={{ color: "orange" }}>JavaScript</span>. I felt
-                    in love with React because or unidirectional data binding
-                    and its beautiful and intuitive{" "}
-                    <span style={{ color: "orange" }}>JSX</span>..."
+                    in love with <span style={{ color: "orange" }}>React</span>{" "}
+                    because its intuitive{" "}
+                    <span style={{ color: "orange" }}>JSX</span> and looking for expanding my knowledge even more on programming"
                 </TextRight>
             </AboutMeRight>
         </AboutMeWrapper>

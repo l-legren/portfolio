@@ -36,6 +36,10 @@ export const ContactMeText = styled.h2`
     font-size: 60px;
     font-weight: 300;
     color: white;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 40px;
+    }
 `;
 
 export const IconLink = styled.a`
@@ -45,18 +49,30 @@ export const IconLink = styled.a`
 export const InstagramIcon = styled(AiOutlineInstagram)`
     font-size: 90px;
     color: white;
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 40px;
+    }
 `;
 export const LinkedInIcon = styled(AiOutlineLinkedin)`
     font-size: 90px;
     color: white;
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 40px;
+    }
 `;
 
 export const MailIcon = styled(AiOutlineMail)`
     font-size: 90px;
     color: white;
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 40px;
+    }
 `;
 
 export const GitHubIcon = styled(AiFillGithub)`
     font-size: 90px;
     color: white;
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+        font-size: 40px;
+    }
 `;
