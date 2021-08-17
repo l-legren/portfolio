@@ -32,8 +32,8 @@ export const TypingTextTyping = styled.h1`
     padding: 80px;
     border-radius: 5px;
     border: 1px solid white;
-    opacity: 0.4;
-    background-color: black;
+    /* opacity: 0.4; */
+    background-color: rgba(0, 0, 0, 0.4);
     cursor: default;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
