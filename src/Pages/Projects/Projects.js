@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from "../../Components/Projects/GridComponent/Grid";
+import Grid from "../../Components/Projects/Grid";
 import { ProjectsContent, ProjectsWrapper } from "./styles";
 
 export default function Projects() {
