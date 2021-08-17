@@ -11,4 +11,5 @@ export const ProjectsWrapper = styled.div`
 
 export const ProjectsContent = styled.div`
     width: ${({ theme }) => theme.breakpoints.xl};
+    margin-top: 50px;
 `;
